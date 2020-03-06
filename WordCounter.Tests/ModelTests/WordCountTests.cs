@@ -87,5 +87,16 @@ namespace WordCounter.Tests
       int matchCount = WordCount.GetNumberOfMatches(word, sentence);
       Assert.AreEqual(0, matchCount);
     }
+
+    [TestMethod]
+    public void
+       GetNumberOfMatches_ChecksWordAgainstSentenceContainingOneMatchThatIsSurroundedByWhiteSpaceReturnsOne_1()
+    {
+      string word = "cat";
+      string sentence = "Only a cat in this sentence.";
+
+      int matchCount = WordCount.GetNumberOfMatches(word, sentence);
+      Assert.AreEqual(1, matchCount);
+    }
   }
 }

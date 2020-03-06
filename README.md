@@ -59,12 +59,12 @@ Description: This demonstrates that the user must define their one sentence corr
 
 Description: This demonstrates that false positives won't be returned.
 
-- _Spec: If the sentence contains an occurance of the word the answer returned should be 1._
+- _Spec: If the sentence contains an occurance of the word with white space surrounding it the answer returned should be 1._
 
   - Input: word: cat sentence: There is a cat in this sentence.
   - Output: 1
 
-Description: This demonstrates that false negatives won't be returned for a single match.
+Description: This demonstrates that false the application can process word matches with white space.
 
 - _Spec: If the sentence contains an occurance of the word differering by casing, the answer returned should be 1._
 
