@@ -81,10 +81,47 @@ Description: This demonstrates that false negatives won't be returned for a sing
 
 Description: This demonstrates all possible match types.
 
-- _Spec: If the sentence multiple occurances of the word then the number of occurances should be returned._
+- _Spec: If the sentence contains multiple occurances of the word then the number of occurances should be returned._
 
   - Input: word: "cat" sentence: "A cat was friends with another cat named dog."
   - Output: 2
+
+Description: This Input demonstrates that the application can search past the first occurance of the word.
+
+- _Spec: If the user presses enter without providing a word for the word input question they will be given an error._
+
+- Input: word: ""
+- Output: "Word must contain at least one letter."
+
+Description: Demonstrates information provided to the user when they provide an empty string.
+
+- _Spec: If the user enters a word with a non letter character the application will provide them with an error._
+
+- Input: word: "Hello "
+- Output: "Word must contain only letter characters."
+
+Description: Demonstrates information provided to the user when they include an illegal character in their word.
+
+- _Spec: If the user enters a sentence with more than one end of sentence punctuation the user will be told to enter a single sentence._
+
+- Input: word: "There's my cat Benny. Isn't he great?"
+- Output: "Only one sentence may be entered."
+
+Description: Demonstrates information provided to the user when they enter more than one sentence.
+
+- _Spec: If the user enters a sentence without an end of sentence punctuation the user will be told to provide a ".", "?" or "!" at the end of their sentence._
+
+- Input: word: "There's my cat Benny"
+- Output: "Please include either a ".", "?", or "!" at the end of the sentence."
+
+Description: Demonstrates information provided to the user when they dont format their sentence properly.
+
+- _Spec: If the user enters a sentence with a non letter character before the end of sentence punctuation the user will be told to end their sentence with a word followed by ".", "?", or "!"_
+
+- Input: word: "There's my cat Benny ."
+- Output: "Please finish your sentence with a word followed by ".", "?", or "!"."
+
+Description: Demonstrates information provided to the user when they dont format their sentence properly.
 
 ## Setup/Installation Requirements
 
