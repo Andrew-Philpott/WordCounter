@@ -26,33 +26,44 @@ namespace WordCounter.Tests
     [TestMethod]
     public void SentenceContainsOnlyOneEndOfSentencePunctuationMark_SentenceStringContainsOnlyOneEndOfSentencePunctuationMarkReturnsTrue_True()
     {
-      string word = "Hi there how are you?";
-      bool containsOneEndOfSentencePunctuationMark = WordCount.SentenceContainsOnlyOneEndOfSentencePunctuationMark(word);
+      string sentence = "Hi there how are you?";
+      bool containsOneEndOfSentencePunctuationMark = WordCount.SentenceContainsOnlyOneEndOfSentencePunctuationMark(sentence);
       Assert.AreEqual(true, containsOneEndOfSentencePunctuationMark);
     }
 
     [TestMethod]
     public void SentenceContainsOnlyOneEndOfSentencePunctuationMark_SentenceStringContainsOnlyTwoEndOfSentencePunctuationMarkReturnsFalse_False()
     {
-      string word = "Hi there! Lets get started.";
-      bool containsOneEndOfSentencePunctuationMark = WordCount.SentenceContainsOnlyOneEndOfSentencePunctuationMark(word);
+      string sentence = "Hi there! Lets get started.";
+      bool containsOneEndOfSentencePunctuationMark = WordCount.SentenceContainsOnlyOneEndOfSentencePunctuationMark(sentence);
       Assert.AreEqual(false, containsOneEndOfSentencePunctuationMark);
     }
 
     [TestMethod]
     public void SentenceContainsEndOfSentencePunctuationAtEndOfSentence_SentenceStringContainsEndOfSentencePunctuationMarkAtEndOfSentenceReturnsTrue_True()
     {
-      string word = "Hi there how are you?";
-      bool containsEndOfSentencePunctuationMarkAtEndOfSentence = WordCount.SentenceContainsEndOfSentencePunctuationAtEndOfSentence(word);
+      string sentence = "Hi there how are you?";
+      bool containsEndOfSentencePunctuationMarkAtEndOfSentence = WordCount.SentenceContainsEndOfSentencePunctuationAtEndOfSentence(sentence);
       Assert.AreEqual(true, containsEndOfSentencePunctuationMarkAtEndOfSentence);
     }
     [TestMethod]
     public void
         SentenceContainsEndOfSentencePunctuationAtEndOfSentence_SentenceStringContainsEndOfSentencePunctuationMarkAtEndOfSentenceAfterCallingTrimReturnsTrue_True()
     {
-      string word = "  Hi there how are you?  ";
-      bool containsEndOfSentencePunctuationMarkAtEndOfSentence = WordCount.SentenceContainsEndOfSentencePunctuationAtEndOfSentence(word);
+      string sentence = "  Hi there how are you?  ";
+      bool containsEndOfSentencePunctuationMarkAtEndOfSentence = WordCount.SentenceContainsEndOfSentencePunctuationAtEndOfSentence(sentence);
       Assert.AreEqual(true, containsEndOfSentencePunctuationMarkAtEndOfSentence);
+    }
+
+    [TestMethod]
+    public void
+        SentenceIsProperlyFormattedWithLetterCharacterBeforeEndOfPunctuation_SentenceStringContainsLetterBeforeEndOfSentencePunctuationMarkAtEndOfSentence_True()
+    {
+      string sentence = "Hi there how are you?";
+      char[] characters = sentence.ToCharArray();
+      char secondToLastCharacter = characters[characters.Length - 2];
+      bool isLetter = WordCount.SentenceIsProperlyFormattedWithLetterCharacterBeforeEndOfPunctuation(secondToLastCharacter);
+      Assert.AreEqual(true, isLetter);
     }
   }
 }
