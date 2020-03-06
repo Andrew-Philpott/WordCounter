@@ -14,5 +14,13 @@ namespace WordCounter.Tests
       bool containsCharacters = WordCount.WordContainsCharacters(word);
       Assert.AreEqual(true, containsCharacters);
     }
+
+    [TestMethod]
+    public void WordContainsOnlyLetterCharacters_WordStringContainingOnlyLetterCharactersReturnsTrue_True()
+    {
+      string word = "hello";
+      bool containsCharacters = WordCount.WordContainsOnlyLetterCharacters(word);
+      Assert.AreEqual(true, containsCharacters);
+    }
   }
 }
