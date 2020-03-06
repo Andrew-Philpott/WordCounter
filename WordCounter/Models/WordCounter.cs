@@ -114,7 +114,16 @@ namespace WordCounter.Models
 
     public static bool SentenceContainsEndOfSentencePunctuationAtEndOfSentence(string sentence)
     {
-      return false;
+      char[] characters = sentence.ToCharArray();
+      char lastCharacterInSentence = characters[characters.Length - 1];
+      if (lastCharacterInSentence == '?' || lastCharacterInSentence == '!' || lastCharacterInSentence == '.')
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
     }
   }
 }
