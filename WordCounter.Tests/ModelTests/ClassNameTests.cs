@@ -31,5 +31,12 @@ namespace WordCounter.Tests
       Assert.AreEqual(true, containsOneEndOfSentencePunctuationMark);
     }
 
+    [TestMethod]
+    public void SentenceContainsOnlyOneEndOfSentencePunctuationMark_SentenceStringContainsOnlyTwoEndOfSentencePunctuationMarkReturnsFalse_False()
+    {
+      string word = "Hi there! Lets get started.";
+      bool containsOneEndOfSentencePunctuationMark = WordCount.SentenceContainsOnlyOneEndOfSentencePunctuationMark(word);
+      Assert.AreEqual(false, containsOneEndOfSentencePunctuationMark);
+    }
   }
 }

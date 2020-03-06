@@ -111,5 +111,10 @@ namespace WordCounter.Models
         return false;
       }
     }
+
+    public static bool SentenceContainsEndOfSentencePunctuationAtEndOfSentence(string sentence)
+    {
+      return false;
+    }
   }
 }
