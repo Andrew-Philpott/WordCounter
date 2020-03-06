@@ -38,5 +38,13 @@ namespace WordCounter.Tests
       bool containsOneEndOfSentencePunctuationMark = WordCount.SentenceContainsOnlyOneEndOfSentencePunctuationMark(word);
       Assert.AreEqual(false, containsOneEndOfSentencePunctuationMark);
     }
+
+    [TestMethod]
+    public void SentenceContainsEndOfSentencePunctuationAtEndOfSentence_SentenceStringContainsEndOfSentencePunctuationMarkAtEndOfSentenceReturnsTrue_True()
+    {
+      string word = "Hi there how are you?";
+      bool containsOneEndOfSentencePunctuationMark = WordCount.SentenceContainsEndOfSentencePunctuationAtEndOfSentence(word);
+      Assert.AreEqual(true, containsOneEndOfSentencePunctuationMark);
+    }
   }
 }
