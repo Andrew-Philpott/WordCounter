@@ -98,5 +98,16 @@ namespace WordCounter.Tests
       int matchCount = WordCount.GetNumberOfMatches(word, sentence);
       Assert.AreEqual(1, matchCount);
     }
+
+    [TestMethod]
+    public void
+       GetNumberOfMatches_ChecksWordAgainstSentenceContainingOneMatchWithDifferentCasing_1()
+    {
+      string word = "cat";
+      string sentence = "Only a Cat in this sentence.";
+
+      int matchCount = WordCount.GetNumberOfMatches(word, sentence);
+      Assert.AreEqual(1, matchCount);
+    }
   }
 }
