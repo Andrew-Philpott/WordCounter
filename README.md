@@ -83,7 +83,7 @@ Description: This demonstrates all possible match types.
 
 - _Spec: If the sentence multiple occurances of the word then the number of occurances should be returned._
 
-  - Input: word: cat, sentence: "A cat was friends with another cat named dog."
+  - Input: word: "cat" sentence: "A cat was friends with another cat named dog."
   - Output: 2
 
 ## Setup/Installation Requirements

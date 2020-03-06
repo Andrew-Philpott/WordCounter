@@ -120,5 +120,16 @@ namespace WordCounter.Tests
       int matchCount = WordCount.GetNumberOfMatches(word, sentence);
       Assert.AreEqual(1, matchCount);
     }
+
+    [TestMethod]
+    public void
+       GetNumberOfMatches_ChecksWordAgainstSentenceContainingTwoMatchesAndReturnsTwo_2()
+    {
+      string word = "cat";
+      string sentence = "A cat was friends with another cat named dog.";
+
+      int matchCount = WordCount.GetNumberOfMatches(word, sentence);
+      Assert.AreEqual(2, matchCount);
+    }
   }
 }
