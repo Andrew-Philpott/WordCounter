@@ -191,7 +191,16 @@ namespace WordCounter.Models
 
     public static int GetNumberOfMatches(string word, string sentence)
     {
-      return 0;
+      int numberOfMatches = 0;
+      string[] sentenceWords = sentence.Split(" ");
+      foreach (string item in sentenceWords)
+      {
+        if (item == word)
+        {
+          numberOfMatches++;
+        }
+      }
+      return numberOfMatches;
     }
   }
 }
