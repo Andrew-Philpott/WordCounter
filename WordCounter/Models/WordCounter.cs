@@ -78,5 +78,10 @@ namespace WordCounter.Models
       }
       return true;
     }
+
+    public static bool SentenceContainsOnlyOneEndOfSentencePunctuationMark(string sentence)
+    {
+      return false;
+    }
   }
 }

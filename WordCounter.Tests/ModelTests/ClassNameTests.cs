@@ -22,5 +22,14 @@ namespace WordCounter.Tests
       bool containsCharacters = WordCount.WordContainsOnlyLetterCharacters(word);
       Assert.AreEqual(true, containsCharacters);
     }
+
+    [TestMethod]
+    public void SentenceContainsOnlyOneEndOfSentencePunctuationMark_SentenceStringContainsOnlyOneEndOfSentencePunctuationMarkReturnsTrue_True()
+    {
+      string word = "Hi there how are you?";
+      bool containsOneEndOfSentencePunctuationMark = WordCount.SentenceContainsOnlyOneEndOfSentencePunctuationMark(word);
+      Assert.AreEqual(true, containsOneEndOfSentencePunctuationMark);
+    }
+
   }
 }
