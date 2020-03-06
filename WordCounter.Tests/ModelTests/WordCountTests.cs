@@ -65,5 +65,16 @@ namespace WordCounter.Tests
       bool isLetter = WordCount.SentenceIsProperlyFormattedWithLetterCharacterBeforeEndOfPunctuation(secondToLastCharacter);
       Assert.AreEqual(true, isLetter);
     }
+
+    [TestMethod]
+    public void
+       SentenceIsProperlyFormattedWithLetterCharacterBeforeEndOfPunctuation_SentenceStringContainsNonLetterBeforeEndOfSentencePunctuationMarkAtEndOfSentence_False()
+    {
+      string sentence = "Hi there how are you ?";
+      char[] characters = sentence.ToCharArray();
+      char secondToLastCharacter = characters[characters.Length - 2];
+      bool isLetter = WordCount.SentenceIsProperlyFormattedWithLetterCharacterBeforeEndOfPunctuation(secondToLastCharacter);
+      Assert.AreEqual(false, isLetter);
+    }
   }
 }
