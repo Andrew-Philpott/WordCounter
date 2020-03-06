@@ -46,5 +46,13 @@ namespace WordCounter.Tests
       bool containsEndOfSentencePunctuationMarkAtEndOfSentence = WordCount.SentenceContainsEndOfSentencePunctuationAtEndOfSentence(word);
       Assert.AreEqual(true, containsEndOfSentencePunctuationMarkAtEndOfSentence);
     }
+    [TestMethod]
+    public void
+        SentenceContainsEndOfSentencePunctuationAtEndOfSentence_SentenceStringContainsEndOfSentencePunctuationMarkAtEndOfSentenceAfterCallingTrimReturnsTrue_True()
+    {
+      string word = "  Hi there how are you?  ";
+      bool containsEndOfSentencePunctuationMarkAtEndOfSentence = WordCount.SentenceContainsEndOfSentencePunctuationAtEndOfSentence(word);
+      Assert.AreEqual(true, containsEndOfSentencePunctuationMarkAtEndOfSentence);
+    }
   }
 }
