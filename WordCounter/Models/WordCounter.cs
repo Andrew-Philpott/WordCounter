@@ -97,6 +97,10 @@ namespace WordCounter.Models
             endOfSentencePunctuationCount++;
             break;
         }
+        if (endOfSentencePunctuationCount >= 2)
+        {
+          return false;
+        }
       }
       if (endOfSentencePunctuationCount == 1)
       {
