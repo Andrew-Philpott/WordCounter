@@ -188,5 +188,10 @@ namespace WordCounter.Models
       }
       return true;
     }
+
+    public static int GetNumberOfMatches(string word, string sentence)
+    {
+      return 0;
+    }
   }
 }

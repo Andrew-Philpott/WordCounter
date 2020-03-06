@@ -76,5 +76,16 @@ namespace WordCounter.Tests
       bool isLetter = WordCount.SentenceIsProperlyFormattedWithLetterCharacterBeforeEndOfPunctuation(secondToLastCharacter);
       Assert.AreEqual(false, isLetter);
     }
+
+    [TestMethod]
+    public void
+       GetNumberOfMatches_ChecksWordAgainstSentenceContainingNoMatchesReturnsZero_0()
+    {
+      string word = "cat";
+      string sentence = "Only a dog in this sentence.";
+
+      int matchCount = WordCount.GetNumberOfMatches(word, sentence);
+      Assert.AreEqual(0, matchCount);
+    }
   }
 }
