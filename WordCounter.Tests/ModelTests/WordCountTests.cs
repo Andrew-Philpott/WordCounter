@@ -109,5 +109,16 @@ namespace WordCounter.Tests
       int matchCount = WordCount.GetNumberOfMatches(word, sentence);
       Assert.AreEqual(1, matchCount);
     }
+
+    [TestMethod]
+    public void
+       GetNumberOfMatches_ChecksWordAgainstSentenceContainingOneMatchWithPunctuationFollowingTheWord_1()
+    {
+      string word = "cat";
+      string sentence = "A cat.";
+
+      int matchCount = WordCount.GetNumberOfMatches(word, sentence);
+      Assert.AreEqual(1, matchCount);
+    }
   }
 }
