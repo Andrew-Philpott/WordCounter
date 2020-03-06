@@ -6,6 +6,10 @@ namespace WordCounter.Models
 
     public static bool WordContainsCharacters(string word)
     {
+      if (!string.IsNullOrEmpty(word))
+      {
+        return true;
+      }
       return false;
     }
   }
