@@ -81,7 +81,31 @@ namespace WordCounter.Models
 
     public static bool SentenceContainsOnlyOneEndOfSentencePunctuationMark(string sentence)
     {
-      return false;
+      char[] characters = sentence.ToCharArray();
+      int endOfSentencePunctuationCount = 0;
+      foreach (char item in characters)
+      {
+        switch (item)
+        {
+          case '.':
+            endOfSentencePunctuationCount++;
+            break;
+          case '!':
+            endOfSentencePunctuationCount++;
+            break;
+          case '?':
+            endOfSentencePunctuationCount++;
+            break;
+        }
+      }
+      if (endOfSentencePunctuationCount == 1)
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
     }
   }
 }
