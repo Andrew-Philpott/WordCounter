@@ -195,7 +195,7 @@ namespace WordCounter.Models
       string[] sentenceWords = sentence.Split(" ");
       foreach (string item in sentenceWords)
       {
-        if (item == word)
+        if (item.ToLower() == word)
         {
           numberOfMatches++;
         }
