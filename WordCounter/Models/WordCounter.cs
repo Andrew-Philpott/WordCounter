@@ -193,11 +193,38 @@ namespace WordCounter.Models
     {
       int numberOfMatches = 0;
       string[] sentenceWords = sentence.Split(" ");
-      foreach (string item in sentenceWords)
+      foreach (string sentenceWord in sentenceWords)
       {
-        if (item.ToLower() == word)
+        string lowerCaseSentenceWord = sentenceWord.ToLower();
+
+        if (lowerCaseSentenceWord.Length == word.Length)
         {
-          numberOfMatches++;
+          if (lowerCaseSentenceWord == word)
+          {
+            numberOfMatches++;
+          }
+        }
+        else if (lowerCaseSentenceWord.Length == (word.Length + 1))
+        {
+          bool isPunctuation = false;
+          char lastPositionOfLowerCaseWord = lowerCaseSentenceWord[lowerCaseSentenceWord.Length - 1];
+
+          switch (lastPositionOfLowerCaseWord)
+          {
+            case '.':
+            case '?':
+            case '!':
+            case '\'':
+            case '\"':
+              isPunctuation = true;
+              break;
+            default:
+              break;
+          }
+          if (isPunctuation && (word == lowerCaseSentenceWord.Substring(0, lowerCaseSentenceWord.Length - 1)))
+          {
+            numberOfMatches++;
+          }
         }
       }
       return numberOfMatches;
