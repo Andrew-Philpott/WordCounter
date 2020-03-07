@@ -1,12 +1,12 @@
 # WordCounter
 
-#### WordCounter 03.05.2020\_
+#### WordCounter 03.06.2020\_
 
 #### By _**Andrew Philpott**_
 
 ## Description
 
-Epicodus project that gathers both a word and sentence from a user and checks how frequently the word appears in the sentence.
+Epicodus project that gathers both a word and sentence from the user and checks how frequently the word appears in the sentence. The application is a C# based console application and has restrictions on the input strings for both the word and the sentence. The word cannot contain any non letter characters and must be at least one character in length. The sentence must be one sentence with an end of sentence punctuation at the end of the sentence.
 
 ## Specs
 
