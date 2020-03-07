@@ -24,6 +24,8 @@ Description: "" is the only input possible for this spec and sets up for the nex
 
 Description: This input was used to show that only letter characters can be used to move forward in the application.
 
+Description: "" is the only input possible for this spec and sets up for the next spec.
+
 - _Spec: If the user inputted "sentence" contains more than one end of sentence punctuation then return false._
 
   - Input: word: cat, sentence: "There's my cat Benny. Isn't he great?"
@@ -44,6 +46,13 @@ Description: This input was used to show that trailing and leading white space w
   - Output: false
 
 Description: This demonstrates that the user must define their one sentence correctly by placing the punctuation at end of the input.
+
+- _Spec: If the user sentence is empty return false._
+
+  - Input: sentence: ""
+  - Output: false
+
+Description: This input was chosen to prevent the next spec from erroring out.
 
 - _Spec: If the user inputted sentence doesn't contain a letter before the end of the sentence return false._
 

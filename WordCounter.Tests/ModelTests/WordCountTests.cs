@@ -57,13 +57,20 @@ namespace WordCounter.Tests
 
     [TestMethod]
     public void
-        SentenceIsProperlyFormattedWithLetterCharacterBeforeEndOfPunctuation_SentenceStringContainsLetterBeforeEndOfSentencePunctuationMarkAtEndOfSentence_True()
+    SentenceContainsEndOfSentencePunctuationAtEndOfSentence_SentenceStringContainsEndOfSentencePunctuationMarkAtEndOfSentenceAfterCallingTrim_True()
     {
-      string sentence = "Hi there how are you?";
-      char[] characters = sentence.ToCharArray();
-      char secondToLastCharacter = characters[characters.Length - 2];
-      bool isLetter = WordCount.SentenceIsProperlyFormattedWithLetterCharacterBeforeEndOfPunctuation(secondToLastCharacter);
-      Assert.AreEqual(true, isLetter);
+      string sentence = "  ?  ";
+      bool containsEndOfSentencePunctuationMarkAtEndOfSentence = WordCount.SentenceContainsEndOfSentencePunctuationAtEndOfSentence(sentence);
+      Assert.AreEqual(true, containsEndOfSentencePunctuationMarkAtEndOfSentence);
+    }
+
+    [TestMethod]
+    public void
+    SentenceContainsEndOfSentencePunctuationAtEndOfSentence_EmptySentenceStringAferCallingTrimReturnsFalse_False()
+    {
+      string sentence = "    ";
+      bool containsEndOfSentencePunctuationMarkAtEndOfSentence = WordCount.SentenceContainsEndOfSentencePunctuationAtEndOfSentence(sentence);
+      Assert.AreEqual(false, containsEndOfSentencePunctuationMarkAtEndOfSentence);
     }
 
     [TestMethod]
@@ -71,9 +78,7 @@ namespace WordCounter.Tests
        SentenceIsProperlyFormattedWithLetterCharacterBeforeEndOfPunctuation_SentenceStringContainsNonLetterBeforeEndOfSentencePunctuationMarkAtEndOfSentence_False()
     {
       string sentence = "Hi there how are you ?";
-      char[] characters = sentence.ToCharArray();
-      char secondToLastCharacter = characters[characters.Length - 2];
-      bool isLetter = WordCount.SentenceIsProperlyFormattedWithLetterCharacterBeforeEndOfPunctuation(secondToLastCharacter);
+      bool isLetter = WordCount.SentenceIsProperlyFormattedWithLetterCharacterBeforeEndOfPunctuation(sentence);
       Assert.AreEqual(false, isLetter);
     }
 
@@ -131,5 +136,6 @@ namespace WordCounter.Tests
       int matchCount = WordCount.GetNumberOfMatches(word, sentence);
       Assert.AreEqual(2, matchCount);
     }
+
   }
 }

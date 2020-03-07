@@ -79,6 +79,7 @@ namespace WordCounter.Models
       return true;
     }
 
+
     public static bool SentenceContainsOnlyOneEndOfSentencePunctuationMark(string sentence)
     {
       char[] characters = sentence.ToCharArray();
@@ -115,21 +116,29 @@ namespace WordCounter.Models
     public static bool SentenceContainsEndOfSentencePunctuationAtEndOfSentence(string sentence)
     {
       string trimmedSentence = sentence.Trim();
-      char[] characters = trimmedSentence.ToCharArray();
-      char lastCharacterInSentence = characters[characters.Length - 1];
-      if (lastCharacterInSentence == '?' || lastCharacterInSentence == '!' || lastCharacterInSentence == '.')
-      {
-        return true;
-      }
-      else
+      if (string.IsNullOrEmpty(trimmedSentence))
       {
         return false;
       }
+      else
+      {
+        char lastCharacterInSentence = trimmedSentence[trimmedSentence.Length - 1];
+        if (lastCharacterInSentence == '?' || lastCharacterInSentence == '!' || lastCharacterInSentence == '.')
+        {
+          return true;
+        }
+        else
+        {
+          return false;
+        }
+      }
+
     }
 
-    public static bool SentenceIsProperlyFormattedWithLetterCharacterBeforeEndOfPunctuation(char characterBeforeEndOfSentence)
+    public static bool SentenceIsProperlyFormattedWithLetterCharacterBeforeEndOfPunctuation(string characterBeforeEndOfSentence)
     {
-      switch (characterBeforeEndOfSentence)
+      char secondToLastCharacter = characterBeforeEndOfSentence[characterBeforeEndOfSentence.Length - 1];
+      switch (secondToLastCharacter)
       {
         case 'a':
           break;
