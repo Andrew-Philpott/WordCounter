@@ -76,6 +76,13 @@ namespace WordCounter
         sentenceInput = Console.ReadLine();
         VerifySentence(sentenceInput);
       }
+      if (validSentence)
+      {
+        string sentenceTrimmed = sentenceInput.Trim();
+        int count = WordCount.GetNumberOfMatches(wordInput, sentenceTrimmed);
+
+        Console.WriteLine("Number of matches are: " + count);
+      }
     }
   }
 }

@@ -132,12 +132,11 @@ namespace WordCounter.Models
           return false;
         }
       }
-
     }
 
     public static bool SentenceIsProperlyFormattedWithLetterCharacterBeforeEndOfPunctuation(string characterBeforeEndOfSentence)
     {
-      char secondToLastCharacter = characterBeforeEndOfSentence[characterBeforeEndOfSentence.Length - 1];
+      char secondToLastCharacter = characterBeforeEndOfSentence[characterBeforeEndOfSentence.Length - 2];
       switch (secondToLastCharacter)
       {
         case 'a':
@@ -201,7 +200,8 @@ namespace WordCounter.Models
     public static int GetNumberOfMatches(string word, string sentence)
     {
       int numberOfMatches = 0;
-      string[] sentenceWords = sentence.Split(" ");
+      string trimmedSentence = sentence.Trim();
+      string[] sentenceWords = trimmedSentence.Split(" ");
       foreach (string sentenceWord in sentenceWords)
       {
         string lowerCaseSentenceWord = sentenceWord.ToLower();
