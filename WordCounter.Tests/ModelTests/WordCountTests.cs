@@ -48,7 +48,7 @@ namespace WordCounter.Tests
     }
     [TestMethod]
     public void
-        SentenceContainsEndOfSentencePunctuationAtEndOfSentence_SentenceStringContainsEndOfSentencePunctuationMarkAtEndOfSentenceAfterCallingTrimReturnsTrue_True()
+    SentenceContainsEndOfSentencePunctuationAtEndOfSentence_SentenceStringContainsEndOfSentencePunctuationMarkAtEndOfSentenceAfterCallingTrimReturnsTrue_True()
     {
       string sentence = "  Hi there how are you?  ";
       bool containsEndOfSentencePunctuationMarkAtEndOfSentence = WordCount.SentenceContainsEndOfSentencePunctuationAtEndOfSentence(sentence);
@@ -84,7 +84,7 @@ namespace WordCounter.Tests
 
     [TestMethod]
     public void
-       GetNumberOfMatches_ChecksWordAgainstSentenceContainingNoMatchesReturnsZero_0()
+      GetNumberOfMatches_ChecksWordAgainstSentenceContainingNoMatchesReturnsZero_0()
     {
       string word = "cat";
       string sentence = "Only a dog in this sentence.";

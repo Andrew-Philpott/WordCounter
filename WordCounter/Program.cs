@@ -3,8 +3,6 @@ using WordCounter.Models;
 
 namespace WordCounter
 {
-
-
   public class Program
   {
     public static bool VerifyWord(string word)
@@ -32,16 +30,17 @@ namespace WordCounter
       bool sentenceContainsEndOfSentencePunctuation = WordCount.SentenceContainsEndOfSentencePunctuationAtEndOfSentence(trimmedSentence);
 
       bool sentenceFormattedCorrectly = WordCount.SentenceIsProperlyFormattedWithLetterCharacterBeforeEndOfPunctuation(trimmedSentence);
-      if (!isOneSentence)
-      {
-        Console.WriteLine("Only one sentence may be entered.");
-        return false;
-      }
-      else if (!sentenceContainsEndOfSentencePunctuation)
+      if (!sentenceContainsEndOfSentencePunctuation)
       {
         Console.WriteLine("Please include either a \".\", \"?\", or \"!\" at the end of the sentence.");
         return false;
       }
+      else if (!isOneSentence)
+      {
+        Console.WriteLine("Only one sentence may be entered.");
+        return false;
+      }
+
       else if (!sentenceFormattedCorrectly)
       {
         Console.WriteLine("Please finish your sentence with a word followed by either a \".\", \"?\", or \"!\"");
@@ -65,7 +64,7 @@ namespace WordCounter
       {
         Console.WriteLine("Enter a word:");
         wordInput = Console.ReadLine();
-        VerifyWord(wordInput);
+        validWord = VerifyWord(wordInput);
       }
       Console.WriteLine("Enter a sentence:");
       string sentenceInput = Console.ReadLine();
@@ -74,7 +73,7 @@ namespace WordCounter
       {
         Console.WriteLine("Enter a sentence:");
         sentenceInput = Console.ReadLine();
-        VerifySentence(sentenceInput);
+        validSentence = VerifySentence(sentenceInput);
       }
       if (validSentence)
       {
